@@ -4,8 +4,7 @@ class JobsController < ApplicationController
   end
 
   def order
-    @jobs = JobsOrderer.new(jobs_params).perform
+    @jobs = JobsOrderer.new(params[:jobs]).perform
     render json: {data: @jobs}
   end
-
 end
