@@ -13,5 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require jquery.backstretch.min.js
+//= require wow.min.js
+//= require scripts.js
 //= require turbolinks
 //= require_tree .
