@@ -19,22 +19,22 @@
           </div>
           </div>
           <div class="c-form-bottom">
-          <form role="form" action="assets/contact.php" method="post">
-            <div class="form-group">
-              <label for="c-form-name">
-                <span class="label-text">I have to do job</span> 
+          <form>
+            <div class="form-group" id="new-job">
+              <label for="c-form-job">
+                <span class="label-text">I have to do job</span>
                 <span class="contact-error"></span>
               </label>
-                <input type="text" name="name" placeholder="describe the job" class="c-form-name form-control" id="c-form-name">
+                <input type="text" name="job" placeholder="describe the job" class="c-form-name form-control" id="c-form-job">
               </div>
               <div class="form-group">
-                <label for="c-form-subject">
-                <span class="label-text">which depends on</span> 
+                <label for="c-form-previousjob">
+                <span class="label-text">which depends on</span>
                 <span class="contact-error"></span>
               </label>
-                <input type="text" name="subject" placeholder="describe the depending job" class="c-form-subject form-control" id="c-form-subject">
+                <input type="text" name="previousjob" placeholder="describe the depending job" class="c-form-previousjob form-control" id="c-form-previousjob">
               </div>
-              <button type="submit" class="btn">Add</button>
+              <button class="btn">Add</button>
           </form>
         </div>
     </div>
@@ -44,19 +44,17 @@
   <div class="col-sm-6 col-sm-offset-3 c-form-info-title wow fadeInUp">
     <div class="c-form-top">
       <div class="c-form-top-left">
-        <h3>...and then review your jobs!</h3>
-        <p>Press the button to order them</p>
+        <h3>review your jobs...</h3>
+        <p>and press the button to order them!</p>
       </div>
       <div class="c-form-top-right">
         <div class="c-form-top-right-icon">
-          <i class="fa fa-magic"></i>
+          <i class="fa fa-magic" id="order-button"></i>
         </div>
       </div>
       </div>
       <div class="c-form-bottom">
-      <center>
-        <p> A depending on B </p>
-        <p> S depending on D </p>
+      <center id="jobs-list">
       </center>
     </div>
   </div>
