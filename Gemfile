@@ -11,4 +11,5 @@ gem 'turbolinks'
 
 group :development, :test do
   gem 'pry'
+  gem 'pry-rails'
 end
