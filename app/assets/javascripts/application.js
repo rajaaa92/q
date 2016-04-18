@@ -16,5 +16,6 @@
 //= require jquery.backstretch.min.js
 //= require wow.min.js
 //= require scripts.js
+//= require jobs.js
 //= require turbolinks
 //= require_tree .
