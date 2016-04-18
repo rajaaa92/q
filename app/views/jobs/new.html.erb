@@ -1,0 +1,63 @@
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2 c-form section-description wow fadeIn">
+        <h1>Jobs</h1>
+        <p>Imagine we have a list of jobs, each represented by a character. Because certain jobs must be done before others, a job may have a dependency on another job...</p>
+    </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3 c-form-box wow fadeInUp">
+        <div class="c-form-top">
+          <div class="c-form-top-left">
+            <h3>List your jobs first...</h3>
+            <p>Fill in the form below to create your list of jobs:</p>
+          </div>
+          <div class="c-form-top-right">
+            <div class="c-form-top-right-icon">
+              <i class="fa fa-cogs"></i>
+            </div>
+          </div>
+          </div>
+          <div class="c-form-bottom">
+          <form role="form" action="assets/contact.php" method="post">
+            <div class="form-group">
+              <label for="c-form-name">
+                <span class="label-text">I have to do job</span> 
+                <span class="contact-error"></span>
+              </label>
+                <input type="text" name="name" placeholder="describe the job" class="c-form-name form-control" id="c-form-name">
+              </div>
+              <div class="form-group">
+                <label for="c-form-subject">
+                <span class="label-text">which depends on</span> 
+                <span class="contact-error"></span>
+              </label>
+                <input type="text" name="subject" placeholder="describe the depending job" class="c-form-subject form-control" id="c-form-subject">
+              </div>
+              <button type="submit" class="btn">Add</button>
+          </form>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3 c-form-info-title wow fadeInUp">
+    <div class="c-form-top">
+      <div class="c-form-top-left">
+        <h3>...and then review your jobs!</h3>
+        <p>Press the button to order them</p>
+      </div>
+      <div class="c-form-top-right">
+        <div class="c-form-top-right-icon">
+          <i class="fa fa-magic"></i>
+        </div>
+      </div>
+      </div>
+      <div class="c-form-bottom">
+      <center>
+        <p> A depending on B </p>
+        <p> S depending on D </p>
+      </center>
+    </div>
+  </div>
+</div>
