@@ -28,7 +28,6 @@ class JobsOrderer
     job ||= @pending_jobs.first.first
     if doable(job)?
       @current_depending_jobs = []
-      binding.pry
       @pending_jobs.delete(job)
       return job
     end
