@@ -15,7 +15,9 @@ class JobsOrderer
   private
 
   def validate_input
-    raise 'jobs can’t depend on themselves' if @pending_jobs.any?{ |job, previous_job| job == previous_job }
+    if @pending_jobs.any?{ |job, previous_job| job == previous_job }
+      raise JobsError, 'jobs can’t depend on themselves'
+    end
   end
 
   def order_jobs
@@ -26,20 +28,25 @@ class JobsOrderer
 
   def find_next_job job = nil
     job ||= @pending_jobs.first.first
-    if doable(job)?
+    if doable?(job)
       @current_depending_jobs = []
       @pending_jobs.delete(job)
       return job
     end
-    raise "jobs can’t have circular dependencies" if @current_depending_jobs.include?(job)
+    raise JobsError, "jobs can’t have circular dependencies" if @current_depending_jobs.include?(job)
     @current_depending_jobs << job
+    raise JobsError, 'job cannot depend on a job that is not defined' if existing?(job)
     find_next_job(@pending_jobs[job])
   end
 
   def doable? job
-    @pending_jobs[job].empty? || @ordered_jobs.include?(@pending_jobs[job])
+    @pending_jobs[job].blank? || @ordered_jobs.include?(@pending_jobs[job])
+  end
+
+  def existing? job
+    @pending_jobs.exclude?(@pending_jobs[job])
   end
 
 end
 
-
+class JobsError < StandardError; end
