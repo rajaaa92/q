@@ -21,6 +21,8 @@ $ ->
     $('input#c-form-previousjob').val('')
 
   $('#order-button').click ->
-    $.post('/jobs/order', jobs: jobs, (data) ->
-      console.log data
-    )
+    $.post('/jobs/order', jobs: jobs)
+      .done (res) ->
+        alert 'your job order is: ' + res.data
+    .fail (e) ->
+      alert e.responseJSON.error
