@@ -3,7 +3,8 @@ jQuery(document).ready(function() {
     /*
         Background slideshow
     */
-    $('.c-form-container').backstretch("assets/bg.jpg");
+    $('.c-form-container').backstretch('<%= asset_path("bg.jpg")%>');
+
     /*
         Wow
     */
